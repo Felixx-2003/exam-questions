@@ -2,7 +2,8 @@ import { cloudConcepts } from './cloudConcepts';
 import { security } from './security';
 import { technology } from './technology';
 import { billing } from './billing';
-import type { Question, QuestionGenerator, QuestionRequest } from '../../types';
+import type { Question } from '../../types';
+export { localQuestionGenerator, generatedTopics, localVariantCapacity, restoreGeneratedQuestions } from './generator';
 export const questions = [...cloudConcepts, ...security, ...technology, ...billing];
 export function validateQuestions(bank: Question[]): void {
   const seen = new Set<string>();
@@ -18,6 +19,3 @@ export function validateQuestions(bank: Question[]): void {
   }
 }
 if (import.meta.env.DEV) validateQuestions(questions);
-export const localQuestionGenerator: QuestionGenerator = { async generate(request: QuestionRequest) {
-  return questions.filter(q => (!request.domain || q.domain === request.domain) && (!request.topic || q.topic === request.topic) && (!request.difficulty || q.difficulty === request.difficulty)).slice(0, request.count);
-} };

@@ -5,5 +5,5 @@ export type Question = { id: string; domain: Domain; topic: string; difficulty: 
 export type Attempt = { questionId: string; selected: string[]; correct: boolean; at: string; mode: 'practice' | 'exam' };
 export type ExamResult = { id: string; at: string; questionIds: string[]; answers: Record<string, string[]>; correct: number; total: number; durationSeconds: number };
 export type Progress = { attempts: Attempt[]; flagged: string[]; exams: ExamResult[]; streak: number; bestStreak: number };
-export type QuestionRequest = { domain?: Domain; topic?: string; difficulty?: Difficulty; count: number };
+export type QuestionRequest = { domain?: Domain; topic?: string; difficulty?: Difficulty; count: number; excludeIds?: string[] };
 export interface QuestionGenerator { generate(request: QuestionRequest): Promise<Question[]> }
