@@ -163,3 +163,104 @@
   .reason-detail{padding:5px 7px}
   .reason-detail strong{font-size:9px}
 }
+
+/* The timed exam keeps navigation visible without extending the page. */
+.exam-page{height:calc(100dvh - 66px);padding-top:16px;padding-bottom:16px;display:flex;flex-direction:column;overflow:hidden}
+.exam-page .exam-top{flex:none;margin-bottom:10px;padding-bottom:10px}
+.exam-page .exam-layout{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) 254px;gap:16px}
+.exam-page .exam-layout>div:first-child{min-height:0;display:flex;flex-direction:column}
+.exam-page .quiz-meta{flex:none;margin:6px 0 8px}
+.exam-page .question-card{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding:22px 25px}
+.exam-page .question-card h2{font-size:22px;margin:17px 0 7px}
+.exam-page .choose-hint{margin-bottom:13px}
+.exam-page .options{flex:1;min-height:0;grid-template-rows:repeat(4,minmax(0,1fr));gap:8px}
+.exam-page .option{min-height:0}
+.exam-page .exam-buttons{flex:none;margin-top:10px}
+.exam-page .navigator{height:100%;min-height:0;position:static;display:flex;flex-direction:column;padding:15px}
+.exam-page .navigator-head{flex:none;margin-bottom:10px}
+.exam-page .nav-grid{flex:1;min-height:0;grid-template-rows:repeat(13,minmax(0,1fr));gap:5px}
+.exam-page .nav-grid button{height:auto;min-height:0}
+.exam-page .legend{flex:none;margin:10px 0}
+.exam-page .navigator>.secondary{flex:none}
+.navigator-trigger,.navigator-close,.navigator-backdrop{display:none}
+@media(max-width:700px){
+  .exam-page{height:calc(100dvh - 121px);padding:8px 13px}
+  .exam-page .exam-top{margin-bottom:8px;padding-bottom:8px}
+  .exam-page .exam-top>strong{display:none}
+  .navigator-trigger{display:inline-flex;align-items:center;gap:5px;background:#eaf0f7;border:0;border-radius:8px;color:#466080;padding:8px;font-size:10px;font-weight:800}
+  .exam-page .exam-layout{display:flex;flex:1;min-height:0}
+  .exam-page .exam-layout>div:first-child{flex:1;min-width:0}
+  .exam-page .quiz-meta{margin:5px 0 7px}
+  .exam-page .question-card{padding:17px 18px}
+  .exam-page .question-card h2{font-size:19px;line-height:1.25;margin:14px 0 6px}
+  .exam-page .choose-hint{margin-bottom:9px}
+  .exam-page .options{gap:7px}
+  .exam-page .option{padding:7px 11px}
+  .exam-page .exam-buttons{margin-top:7px}
+  .exam-page .exam-buttons button{min-height:41px}
+  .exam-page .navigator{display:none}
+  .navigator-backdrop{display:block;position:fixed;inset:0;background:#0c1a30b9;border:0;z-index:10}
+  .exam-page .navigator.open{display:flex;position:fixed;inset:12px;width:auto;height:auto;z-index:11;padding:14px;border-radius:16px}
+  .navigator-close{display:grid;place-items:center;border:0;background:#f0f3f8;color:#71819a;width:27px;height:27px;border-radius:7px}
+  .exam-page .navigator-head{gap:7px}
+  .exam-page .navigator-head span{margin-left:auto}
+  .exam-page .nav-grid{gap:4px}
+  .exam-page .nav-grid button{font-size:10px}
+}
+@media(max-width:700px) and (max-height:650px){
+  .exam-page{padding:5px 9px}
+  .exam-page .exam-top{margin-bottom:4px;padding-bottom:4px}
+  .exam-page .text-button{font-size:10px}
+  .exam-page .timer{font-size:11px;padding:5px}
+  .exam-page .timer svg{width:13px;height:13px}
+  .navigator-trigger{padding:5px;font-size:9px}
+  .navigator-trigger svg{width:13px;height:13px}
+  .exam-page .quiz-meta{font-size:8px;margin:5px 0 4px}
+  .exam-page .question-card{padding:8px 11px;border-radius:12px}
+  .exam-page .question-head{font-size:8px}
+  .exam-page .difficulty{padding:3px 5px}
+  .exam-page .question-card h2{font-size:15px;line-height:1.18;margin:7px 0 4px}
+  .exam-page .choose-hint{font-size:9px;margin-bottom:5px}
+  .exam-page .options{gap:4px}
+  .exam-page .option{font-size:10px;padding:4px 7px;border-radius:8px;gap:7px}
+  .exam-page .option-letter{width:23px;height:23px;border-radius:5px}
+  .exam-page .exam-buttons{margin-top:4px}
+  .exam-page .exam-buttons button{min-height:32px;font-size:11px}
+  .exam-page .navigator.open{inset:7px;padding:10px}
+  .exam-page .navigator-head{margin-bottom:6px}
+  .exam-page .navigator-head strong{font-size:12px}
+  .exam-page .legend{margin:6px 0}
+  .exam-page .navigator>.secondary{min-height:28px}
+}
+
+.exam-setup-page{height:calc(100dvh - 66px);padding-top:20px;padding-bottom:20px;display:flex;flex-direction:column;overflow:hidden}
+.exam-setup-page>.back{align-self:flex-start;flex:none}
+.exam-setup-page .page-title{flex:none;margin:17px 0 17px}
+.exam-setup-page .page-title h1{font-size:31px}
+.exam-setup-page .exam-intro{flex:none;margin-bottom:13px}
+.exam-setup-page>.panel{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+.exam-setup-page>.panel p{line-height:1.5}
+@media(max-width:700px){.exam-setup-page{height:calc(100dvh - 121px);padding:12px 13px}.exam-setup-page .page-title{margin:13px 0}.exam-setup-page .page-title h1{font-size:27px}.exam-setup-page .exam-intro{margin-bottom:10px}.exam-setup-page>.panel{padding:18px}.exam-setup-page>.panel p{margin-bottom:14px}}
+@media(max-width:700px) and (max-height:650px){.exam-setup-page{padding:6px 9px}.exam-setup-page .back{font-size:10px}.exam-setup-page .page-title{margin:7px 0}.exam-setup-page .page-title h1{font-size:23px;margin:2px 0}.exam-setup-page .page-title p{display:none}.exam-setup-page .section-kicker{font-size:8px}.exam-setup-page .exam-intro{gap:5px;margin-bottom:7px}.exam-setup-page .exam-intro>div{padding:6px 3px;gap:2px}.exam-setup-page .exam-intro svg{width:18px;height:18px}.exam-setup-page .exam-intro strong{font-size:11px}.exam-setup-page .exam-intro span{font-size:8px}.exam-setup-page>.panel{padding:10px 12px}.exam-setup-page>.panel h3{font-size:14px;margin-bottom:4px}.exam-setup-page>.panel p{font-size:10px;line-height:1.3;margin-bottom:8px}.exam-setup-page>.panel .primary{min-height:32px;font-size:11px}}
+
+.results-page{height:calc(100dvh - 66px);padding-top:12px;padding-bottom:14px;display:flex;flex-direction:column;overflow:hidden}
+.results-page>.back{align-self:flex-start;flex:none}
+.results-page .results-hero{flex:none;margin:8px 0;padding:14px 20px}
+.results-page .result-icon{width:36px;height:36px;border-radius:10px;margin-bottom:5px}
+.results-page .result-icon svg{width:21px;height:21px}
+.results-page .results-hero h1{font-size:46px;margin:2px 0}
+.results-page .results-hero p{margin-bottom:4px}
+.results-page .result-summary{margin:10px 0}
+.results-page .result-summary strong{font-size:17px}
+.results-page .section-heading{flex:none;margin:9px 0 6px}
+.results-page .section-heading h2{font-size:19px}
+.results-page .domain-results{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-around;padding:10px 18px;margin-bottom:9px}
+.results-page .domain-row{padding:4px 0}
+.results-page>.primary{flex:none;align-self:flex-start;min-height:40px}
+.result-review-page{max-width:850px}
+.result-review-top{display:flex;align-items:center;justify-content:space-between;flex:none;margin-bottom:10px}
+.result-review-top strong{font-size:13px;color:#536782}
+.result-review-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:none;margin-top:10px}
+.result-review-actions select{width:auto;max-width:180px}
+@media(max-width:700px){.results-page{height:calc(100dvh - 121px);padding:9px 13px}.results-page .results-hero{padding:11px 12px;margin:7px 0}.results-page .results-hero h1{font-size:43px}.results-page .results-hero p{font-size:11px}.results-page .result-summary{gap:9px;margin:8px 0}.results-page .result-summary strong{font-size:15px}.results-page .result-summary span{font-size:9px}.results-page .section-heading{margin:6px 0 4px}.results-page .domain-results{padding:8px 10px;margin-bottom:7px}.results-page .domain-row{grid-template-columns:1fr 70px 30px}.results-page .domain-row strong{font-size:10px}.results-page .domain-row span,.results-page .domain-row b{font-size:9px}.result-review-actions button{font-size:11px;padding:0 9px}.result-review-actions select{max-width:112px;font-size:10px}}
+@media(max-width:700px) and (max-height:650px){.results-page{padding:5px 9px}.results-page>.back{font-size:10px}.results-page .results-hero{padding:7px 9px;margin:4px 0}.results-page .result-icon{display:none}.results-page .section-kicker{font-size:8px}.results-page .results-hero h1{font-size:34px;margin:0}.results-page .results-hero p{display:none}.results-page .result-summary{margin:3px 0;gap:5px}.results-page .result-summary strong{font-size:12px}.results-page .result-summary span{font-size:8px}.results-page .results-hero small{font-size:8px}.results-page .section-heading{margin:4px 0 3px}.results-page .section-heading h2{font-size:14px;margin:0}.results-page .domain-results{padding:5px 7px;margin-bottom:5px}.results-page .domain-row{padding:2px 0;grid-template-columns:1fr 56px 25px;gap:5px}.results-page .domain-row strong{font-size:9px}.results-page .domain-row span,.results-page .domain-row b{font-size:8px}.results-page>.primary{min-height:31px;font-size:10px}.result-review-top{margin-bottom:5px}.result-review-top .back,.result-review-top strong{font-size:10px}.result-review-actions{margin-top:5px;gap:4px}.result-review-actions button,.result-review-actions select{min-height:30px;height:30px;font-size:9px;padding:0 5px}.result-review-actions select{max-width:100px}}
